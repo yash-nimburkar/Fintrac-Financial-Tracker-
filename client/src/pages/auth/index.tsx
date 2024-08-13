@@ -1,4 +1,8 @@
-import {SignedIn, SignedOut, SignInButton, SignUpButton, UserButton} from "@clerk/clerk-react";
+import {SignedIn, 
+    SignedOut, 
+    SignInButton, 
+    SignUpButton} from "@clerk/clerk-react";
+    import { Navigate } from "react-router-dom";
 
 export const Auth = () => {
     return <div className="sign-in-container">
@@ -6,9 +10,8 @@ export const Auth = () => {
             <SignInButton mode="modal"/>
             <SignUpButton mode="modal"/>
         </SignedOut>
-
         <SignedIn>
-            <UserButton/>
+            <Navigate to ="/"/>
         </SignedIn>
     </div>
 }
